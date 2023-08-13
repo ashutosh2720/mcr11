@@ -14,7 +14,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/decription/:id' element={<Home />} />
+        <Route path='/description/:id' element={<Home />} />
 
       </Routes>
 

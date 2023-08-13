@@ -4,7 +4,8 @@ import { movies } from '../db/movies'
 
 const Description = () => {
     const { id } = useParams()
-    const movie = movies.filter((movie) => movie.id === Number(id))
+    const movie = movies.find((movie) => movie.id === Number(id))
+    console.log(movie)
     return (
         <div>
             <h1>{movie.title}</h1>
