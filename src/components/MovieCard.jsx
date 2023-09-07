@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useGlobleMovies } from '../context/videoContext'
 
 const MovieCard = ({ movie }) => {
-    const {AddToWatchList,AddToStared} = useGlobleMovies()
+    const {RemoveFromStared,RemoveFromWacthList,watchList,staredMovie,AddToWatchList,AddToStared} = useGlobleMovies()
     const navigate = useNavigate()
     return (
         <div className='w-[200px] h-[350px] shadow-md '>
@@ -11,8 +11,8 @@ const MovieCard = ({ movie }) => {
             <h1 className='font-bold'>{movie.title}</h1>
             <h1>{movie?.summary?.slice(0, 100)}</h1>
             <div className="btn flex text-white gap-1">
-                <button className='bg-gray-500 p-1' onClick={()=>AddToStared(movie)}>Star</button>
-                <button className='bg-gray-500 p-1' onClick={()=>AddToWatchList(movie)}>Add to watchList</button>
+                <button className='bg-gray-500 p-1' onClick={()=>staredMovie.find((item)=>item.id===movie.id)?RemoveFromStared(movie.id):AddToStared(movie)}>{staredMovie.find((item)=>item.id ===movie.id)?'already in stared ':'addToStaed'}</button>
+                <button className='bg-gray-500 p-1' onClick={()=>watchList.find((item)=>item.id===movie.id)?RemoveFromWacthList(movie.id):AddToWatchList(movie)}>{watchList.find((item)=>item.id ===movie.id)?'already in watchList ':'addToWatchList'}</button>
             </div>
 
 

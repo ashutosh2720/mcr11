@@ -25,8 +25,6 @@ const MovieProvider = ({ children }) => {
   const [yearFilter, setYearFilter] = useState("allYear");
   const [ratingFilter, setRatingFilter] = useState("allRating");
 
-  console.log(ratingFilter);
-
   useEffect(() => {
     setWatchList(JSON.parse(localStorage.getItem("watchList")) ?? []);
     setStaredMovie(JSON.parse(localStorage.getItem("staredMovie")) ?? []);
@@ -76,7 +74,7 @@ const MovieProvider = ({ children }) => {
 
   //  console.log(filteredData)
 
-  const filteredData = allMovies
+  let filteredData = allMovies
     .filter(
       (movie) => ratingFilter === "allRating" || movie.rating === ratingFilter
     )
