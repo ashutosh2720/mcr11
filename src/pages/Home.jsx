@@ -1,16 +1,19 @@
-import React from 'react'
-import Header from '../components/Header'
+import React, { useState } from 'react'
+
 import { movies } from '../db/movies'
 import MovieCard from '../components/MovieCard'
+import { useGlobleMovies } from '../context/videoContext'
 
 const Home = () => {
+    const {allMovies,filteredData} = useGlobleMovies();
+
     return (
         <div className='w-full h-full'>
-            <Header />
+          
             <div className="movies w-[100%] h-screen gap-3 flex flex-wrap justify-center items-center">
 
                 {
-                    movies.map((movie) =>
+                    filteredData?.map((movie) =>
                         <MovieCard movie={movie} />
                     )
                 }
