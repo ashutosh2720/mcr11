@@ -8,9 +8,9 @@ const Home = () => {
     const {allMovies,filteredData} = useGlobleMovies();
 
     return (
-        <div className='w-full h-full'>
+        <div className='w-full h-full py-5'>
           
-            <div className="movies w-[100%] h-screen gap-3 flex flex-wrap justify-center items-center">
+            <div className="movies w-[100%]  h-screen gap-3 flex flex-wrap justify-center items-center">
 
                 {
                     filteredData?.map((movie) =>

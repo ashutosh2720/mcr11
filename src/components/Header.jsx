@@ -29,7 +29,7 @@ const Header = () => {
   } = useGlobleMovies();
 
   return (
-    <div className="w-[100%] flex  justify-around ">
+    <div className="w-[100%] flex pt-1 pb-2 border-[2px]   justify-around ">
       <h1>Movies</h1>
       <select
         name="genreFilter"

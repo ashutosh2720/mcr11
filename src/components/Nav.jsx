@@ -8,14 +8,14 @@ const {allMovies,searchResult,setSearchInput,searchInput} = useGlobleMovies()
 
   const { watchList, staredMovie } = useGlobleMovies();
   return <>
-    <div className=" w-full bg-gray-800 flex justify-between items-center pl-2 pr-2 pt-2 pb-2">
+    <div className=" w-full bg-black-800 border-[1px] flex justify-between items-center px-5 py-5">
       <h1 className="text-2xl text-white">IMDB</h1>
       <input
         type="search"
         name="saerch"
         id="search"
         value={searchInput}
-        className="rounded-md pl-3 pr-3 pt-1 pb-1 w-[20%]"
+        className="rounded-md  px-5 py-2 w-[20%]"
         placeholder="search movie by title,cast,director.."
         onChange={(e)=> setSearchInput(e.target.value)}
       />
